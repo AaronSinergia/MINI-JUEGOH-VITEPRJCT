@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer_title {
+  font-size: 11px;
+  color: gray;
+}
