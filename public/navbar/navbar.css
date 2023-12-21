@@ -1,0 +1,29 @@
+img {
+  width: 60%;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameLogo {
+  width: 50%;
+  padding: 5px;
+}
+
+.treslogo {
+  width: 47%;
+  border-radius: 15%;
+}
+
+.ahorcadologo {
+  border-radius: 15%;
+}
+
+.bingologo {
+  width: 48%;
+  border-radius: 15%;
+}
