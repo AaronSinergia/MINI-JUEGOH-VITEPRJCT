@@ -10,20 +10,25 @@ nav {
 }
 
 .gameLogo {
-  width: 50%;
-  padding: 5px;
+  display: flex;
+  width: 80%;
+  padding: 7px;
+  justify-content: center;
+  align-items: center;
 }
 
 .treslogo {
   width: 47%;
-  border-radius: 15%;
+  cursor: pointer;
 }
 
 .ahorcadologo {
-  border-radius: 15%;
+  width: 50%;
+  cursor: pointer;
 }
 
 .bingologo {
   width: 48%;
   border-radius: 15%;
+  cursor: pointer;
 }

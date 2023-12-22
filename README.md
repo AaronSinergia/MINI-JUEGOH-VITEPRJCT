@@ -12,14 +12,12 @@ Queremos controlar cuando alguien gana haciendo comprobaciones o cuando se queda
 -
 En cuanto a maquetación no tiene por qué ser muy complicado mientras cumpla la funcionalidad, por ejemplo, este es el estilo que utiliza google Chrome.
 
-<Piedra papel o tijera>
-Piedra papel o tijera
--
-Para este juego jugaremos contra la máquina, es decir, en nuestro código tendremos una aleatoriedad que será lo que saque la máquina.
--
-El usuario podrá elegir que jugar en ese turno y tendremos dos contadores, uno de victorias y otro de derrotas.
--
-Estas cantidades las guardaremos en el localStorage para que la siguiente vez que abramos la aplicación sigamos viendo el mismo conteo
+<Ahorcado>
+Para el ahorcado tendremos un array de posibles palabras, cada palabra tendrá una longitud, y según esa longitud pintaremos los huecos.
+Además permitiremos elegir al usuario una letra, podemos hacerlo con el propio teclado, escuchando un evento en concreto.
+Cuando el usuario falle le indicaremos con una imagen o como queráis, que está más cerca de perder.
+Cuando falle "x" cantidad de veces perderá y le mostraremos el mensaje en un alert.
+Cuando complete la palabra habrá ganado y también se lo mostraremos.
 
 <Bingo>
 Bingo!
@@ -36,7 +34,6 @@ Para todos estos juegos tendréis que seguir una serie de pasos, estos pasos son
 1️⃣ Estudiar el funcionamiento lógico del juego que se quiere desarrollar
 2️⃣ Pensar la mejor manera de manipular nuestros datos, tomar decisiones de que tipos de datos vamos a utilizar en nuestras variables
 3️⃣ Dividir los problemas. Será muy importante ante un problema muy grande ir desgranando en problemas más pequeños, de los que primero necesitemos a los últimos
-4️⃣ Plasmar nuestros datos de JS en elementos visuales de HTML que podemos maquetar con CSS
 
 Requisitos
 

@@ -5,12 +5,15 @@ import './style.css';
 
 const mainBodyApp = () => {
   const appID = document.querySelector('#app');
-  const mainFooter = footer();
   const mainHeader = header();
   const mainNav = navbar();
+  const mainContent = document.createElement('div');
+  mainContent.className = 'main_content';
+  const mainFooter = footer();
 
   appID.appendChild(mainHeader);
   appID.appendChild(mainNav);
+  appID.appendChild(mainContent);
   appID.appendChild(mainFooter);
 };
 
