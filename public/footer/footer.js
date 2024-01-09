@@ -6,7 +6,7 @@ const footer = () => {
   footer.className = 'footer';
 
   const footerTitle = document.createElement('h3');
-  footerTitle.innerHTML = '© Creado por Aaron Carrasco Romero - 2023';
+  footerTitle.innerHTML = '© Creado por Aaron Carrasco Romero - 2024';
   footerTitle.className = 'footer_title';
 
   const logos = footerLogos();

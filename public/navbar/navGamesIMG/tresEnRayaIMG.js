@@ -1,4 +1,4 @@
-import tresEnRaya from '../../../pages/gamesCode/tresEnRaya';
+import tresEnRaya from '../../../pages/gamesCode/tresEnRaya/tresEnRayaGameCode';
 
 const tresEnRayaIMG = () => {
   const tresEnRayaLogo = document.createElement('img');
@@ -6,7 +6,9 @@ const tresEnRayaIMG = () => {
   tresEnRayaLogo.alt = 'tres_en_btn';
   tresEnRayaLogo.className = 'gameLogo treslogo';
 
-  tresEnRayaLogo.addEventListener('click', () => tresEnRaya());
+  tresEnRayaLogo.addEventListener('click', () => {
+    tresEnRaya();
+  });
 
   return tresEnRayaLogo;
 };

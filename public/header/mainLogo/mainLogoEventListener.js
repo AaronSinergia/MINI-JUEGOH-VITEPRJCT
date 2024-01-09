@@ -3,7 +3,11 @@ import bingoIMG from '../../navbar/navGamesIMG/bingoIMG';
 import tresEnRayaIMG from '../../navbar/navGamesIMG/tresEnRayaIMG';
 
 const mainLogoEventListener = () => {
+  const mainContent = document.querySelector('.main_content');
+  mainContent.innerHTML = '';
   const navbar = document.querySelector('nav');
+  navbar.classList.remove('miniNav');
+  navbar.innerHTML = ``;
 
   const tresEnRayaLogo = tresEnRayaIMG();
   const ahorcadoLogo = ahorcadoIMG();

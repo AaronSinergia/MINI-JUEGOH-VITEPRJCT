@@ -1,0 +1,46 @@
+article {
+  position: absolute;
+  background-color: rgb(24, 185, 118);
+  border-radius: 30px;
+  margin: 0px 20px 0 20px;
+}
+
+table {
+  position: relative;
+  display: table;
+  margin: 20px 20px 20px 20px;
+  width: 310px;
+  height: 320px;
+}
+
+td {
+  background-color: rgb(241, 165, 43);
+  border: 5px solid rgb(41, 147, 126);
+  text-align: center;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.x {
+  color: #d51b75;
+}
+
+.o {
+  color: #1facd3;
+}
+
+.div_buttons {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+button:last-child,
+button:first-child {
+  padding: 10px 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgb(59, 57, 57);
+  color: white;
+}

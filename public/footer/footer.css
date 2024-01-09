@@ -1,8 +1,10 @@
 footer {
   display: flex;
+  position: fixed;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  bottom: 0;
 }
 
 .footer_title {

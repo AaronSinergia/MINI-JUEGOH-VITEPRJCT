@@ -1,7 +1,7 @@
+import './style.css';
 import footer from './public/footer/footer';
 import header from './public/header/header';
 import navbar from './public/navbar/navbar';
-import './style.css';
 
 const mainBodyApp = () => {
   const appID = document.querySelector('#app');
@@ -9,6 +9,7 @@ const mainBodyApp = () => {
   const mainNav = navbar();
   const mainContent = document.createElement('div');
   mainContent.className = 'main_content';
+
   const mainFooter = footer();
 
   appID.appendChild(mainHeader);
