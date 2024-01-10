@@ -11,17 +11,20 @@ const tresEnRayaGameCode = () => {
   const tableDiv = document.createElement('div');
   tableDiv.className = 'div_game';
 
+  const tableArticle = document.createElement('article');
+
+  const gridTableGame = document.createElement('table');
+
   const divButtons = document.createElement('div');
   divButtons.className = 'div_buttons';
 
   const startsXButton = document.createElement('button');
-  const startsYButton = document.createElement('button');
   startsXButton.innerText = 'Play X';
+  startsXButton.className = 'button_x';
+
+  const startsYButton = document.createElement('button');
   startsYButton.innerText = 'Play Y';
-
-  const tableArticle = document.createElement('article');
-
-  const gridTableGame = document.createElement('table');
+  startsYButton.className = 'button_y';
 
   for (let i = 0; i < tresRayaArray.length; i++) {
     const tr = document.createElement('tr');
@@ -29,6 +32,19 @@ const tresEnRayaGameCode = () => {
     for (let j = 0; j < tresRayaArray[i].length; j++) {
       const td = document.createElement('td');
       td.innerHTML = tresRayaArray[i][j];
+
+      const startTheGame = () => {
+        td.innerHTML = '';
+      };
+
+      startsXButton.addEventListener('click', () => startTheGame());
+      startsYButton.addEventListener('click', () => startTheGame());
+
+      function printX() {
+        console.log('X');
+      }
+
+      td.addEventListener('click', () => printX());
 
       if (tresRayaArray[i][j].includes('O')) {
         td.className = 'o';
