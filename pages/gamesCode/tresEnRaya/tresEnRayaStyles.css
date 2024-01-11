@@ -7,25 +7,32 @@ article {
 
 table {
   position: relative;
-  display: table;
-  margin: 20px 20px 20px 20px;
   width: 310px;
   height: 320px;
+  margin: 20px 20px 20px 20px;
 }
 
 td {
+  width: 100px;
+  height: 100px;
   background-color: rgb(241, 165, 43);
   border: 5px solid rgb(41, 147, 126);
   text-align: center;
   font-size: 60px;
   font-weight: 700;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
-.x {
+td:hover {
+  background-color: rgb(222, 183, 124);
+}
+
+.X {
   color: #d51b75;
 }
 
-.o {
+.O {
   color: #1facd3;
 }
 

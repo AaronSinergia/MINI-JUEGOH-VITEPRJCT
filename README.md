@@ -3,14 +3,11 @@ Requisitos | Entrega
 Crearemos un proyecto en vite y desarrollaremos un mínimo de 3 juegos.
 
 <Tres en raya>
-Tres en raya
-Para el juego del tres en raya tendremos en el apartado visual un tablero de juego de 3x3, también, tendremos dos botones para elegir quien comienza jugando, si las "X" o los "O", en el momento de la elección desaparecerán los botones y el resto de turnos irán cambiando al contrario, si acaba de jugar "X" le tocará en el siguiente a "O".
+tendremos dos botones para elegir quien comienza jugando, si las "X" o los "O", en el momento de la elección desaparecerán los botones y el resto de turnos irán cambiando al contrario, si acaba de jugar "X" le tocará en el siguiente a "O".
 -
 Habrá que tener en cuenta que no se pueda sustituir el valor de una casilla ya marcada.
 -
 Queremos controlar cuando alguien gana haciendo comprobaciones o cuando se queda empate, en ambos casos el resultado se puede mostrar en un alert.
--
-En cuanto a maquetación no tiene por qué ser muy complicado mientras cumpla la funcionalidad, por ejemplo, este es el estilo que utiliza google Chrome.
 
 <Ahorcado>
 Para el ahorcado tendremos un array de posibles palabras, cada palabra tendrá una longitud, y según esa longitud pintaremos los huecos.
