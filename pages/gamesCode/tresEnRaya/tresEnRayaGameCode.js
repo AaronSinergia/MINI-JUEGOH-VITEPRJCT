@@ -31,6 +31,7 @@ const tresEnRayaGameCode = () => {
 
     for (let j = 0; j < tresRayaArray[i].length; j++) {
       const td = document.createElement('td');
+
       tr.appendChild(td);
     }
     gridTableGame.appendChild(tr);
@@ -56,21 +57,33 @@ const tresEnRayaGameCode = () => {
     };
 
     const iAPlayer = (ev) => {
-      // 1 - RECOJO EL VALOR QUE HE CLICADO 'EV.TARGET' (HECHO)
-      console.log(ev.target);
-      // 2 - QUIERO QUE ME PINTE ALEATORIAMENTE UN VALOR CONTRARIO AL PINTADO
-      //  OBTENER COMO SELECCIONAR FILAS Y COLUMNAS  (HECHO)
       const currentCellPosition = {
         row: ev.target.parentNode.rowIndex,
         column: ev.target.cellIndex,
       };
 
-      // console.log(currentCellPosition.row && currentCellPosition.column - 1);
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
-      // 2.1 - COMPARAR EL VALOR Y ASIGNARLE EL CONTRARIO
-      //  2.2 - PINTARLO ALEATORIAMENTE EN UN HUECO VACIO
-      //  2.3 - VOLVER A COMPARAR ASIGNAR CONTRARIO Y PINTAR
-      //  2.4 - VERIFICAR CUANDO SE CUMPLA EL 3 EN RAYA Y SOLTAR UN ALERT INDICANDO QUIEN HA GANADO SI LA MAQUINA O TU
+      currentCellPosition.row = getRandomInt(0, 2);
+      currentCellPosition.column = getRandomInt(0, 2);
+
+      console.log(currentCellPosition);
+      // console.log(randomRow);
+      // console.log(randomColumn);
+
+      setTimeout(() => {
+        const printRandomTD = document.querySelector(
+          `td[data-row="${currentCellPosition.row}"][data-column="${currentCellPosition.column}"]`
+        );
+
+        if (printRandomTD && printRandomTD.innerHTML === '') {
+          printRandomTD.innerHTML = currentPlayer;
+          printRandomTD.className = currentPlayer + ' randomIAposition';
+          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
+      }, 300);
     };
 
     for (let i = 0; i < tresRayaArray.length; i++) {
@@ -78,10 +91,14 @@ const tresEnRayaGameCode = () => {
 
       for (let j = 0; j < tresRayaArray[i].length; j++) {
         const td = document.querySelector('td');
+        td.setAttribute('data-row', i.toString());
+        td.setAttribute('data-column', j.toString());
+
         td.addEventListener('click', (ev) => {
           printXorO(ev);
           iAPlayer(ev);
         });
+
         tr.appendChild(td);
       }
       gridTableGame.appendChild(tr);
