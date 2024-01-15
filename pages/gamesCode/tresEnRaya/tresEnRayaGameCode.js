@@ -69,21 +69,117 @@ const tresEnRayaGameCode = () => {
       currentCellPosition.row = getRandomInt(0, 2);
       currentCellPosition.column = getRandomInt(0, 2);
 
-      console.log(currentCellPosition);
-      // console.log(randomRow);
-      // console.log(randomColumn);
-
       setTimeout(() => {
         const printRandomTD = document.querySelector(
           `td[data-row="${currentCellPosition.row}"][data-column="${currentCellPosition.column}"]`
         );
 
-        if (printRandomTD && printRandomTD.innerHTML === '') {
+        if (printRandomTD.innerHTML === '') {
           printRandomTD.innerHTML = currentPlayer;
           printRandomTD.className = currentPlayer + ' randomIAposition';
           currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        } else {
+          const allCells = document.querySelectorAll('td');
+          const emptyAllCells = Array.from(allCells).filter(
+            (td) => td.innerHTML === ''
+          );
+
+          if (emptyAllCells.length > 0) {
+            const randomIndexAll = Math.floor(
+              Math.random() * emptyAllCells.length
+            );
+            const randomTdAll = emptyAllCells[randomIndexAll];
+
+            randomTdAll.innerHTML = currentPlayer;
+            randomTdAll.className = currentPlayer + ' randomIAposition';
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+          }
         }
       }, 300);
+    };
+
+    const whoWins = () => {
+      const allCells = document.querySelectorAll('td');
+
+      for (let i = 0; i < 3; i++) {
+        const startCell = i * 3;
+        const rowCells = [
+          allCells[startCell],
+          allCells[startCell + 1],
+          allCells[startCell + 2],
+        ];
+
+        if (
+          rowCells.every((cell) => cell.innerHTML === 'X') ||
+          rowCells.every((cell) => cell.innerHTML === 'O')
+        ) {
+          alert(`${rowCells[0].innerHTML} HA GANADO!`);
+          console.log(`${rowCells[0].innerHTML} HA GANADO!`);
+
+          setTimeout(() => {
+            resetGame();
+          }, 1200);
+
+          return;
+        }
+      }
+
+      for (let j = 0; j < 3; j++) {
+        const columnCells = [allCells[j], allCells[j + 3], allCells[j + 6]];
+
+        if (
+          columnCells.every((cell) => cell.innerHTML === 'X') ||
+          columnCells.every((cell) => cell.innerHTML === 'O')
+        ) {
+          alert(`${columnCells[0].innerHTML} wins!`);
+          console.log(`${columnCells[0].innerHTML} wins!`);
+
+          setTimeout(() => {
+            resetGame();
+          }, 1200);
+
+          return;
+        }
+      }
+
+      const diagonal1 = [allCells[0], allCells[4], allCells[8]];
+      const diagonal2 = [allCells[2], allCells[4], allCells[6]];
+
+      if (
+        diagonal1.every((cell) => cell.innerHTML === 'X') ||
+        diagonal1.every((cell) => cell.innerHTML === 'O')
+      ) {
+        alert(`${diagonal1[0].innerHTML} HA GANADO!`);
+        console.log(`${diagonal1[0].innerHTML} HA GANADO!`);
+
+        setTimeout(() => {
+          resetGame();
+        }, 1200);
+
+        return;
+      }
+
+      if (
+        diagonal2.every((cell) => cell.innerHTML === 'X') ||
+        diagonal2.every((cell) => cell.innerHTML === 'O')
+      ) {
+        alert(`${diagonal2[0].innerHTML} HA GANADO!`);
+        console.log(`${diagonal2[0].innerHTML} HA GANADO!`);
+
+        setTimeout(() => {
+          resetGame();
+        }, 1200);
+
+        return;
+      }
+    };
+
+    const resetGame = () => {
+      const allCells = document.querySelectorAll('td');
+      allCells.forEach((cell) => {
+        cell.innerHTML = '';
+        cell.className = '';
+      });
     };
 
     for (let i = 0; i < tresRayaArray.length; i++) {
@@ -97,6 +193,7 @@ const tresEnRayaGameCode = () => {
         td.addEventListener('click', (ev) => {
           printXorO(ev);
           iAPlayer(ev);
+          whoWins();
         });
 
         tr.appendChild(td);

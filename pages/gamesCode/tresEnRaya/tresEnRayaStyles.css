@@ -30,10 +30,12 @@ td:hover {
 
 .X {
   color: #d51b75;
+  cursor: pointer;
 }
 
 .O {
   color: #1facd3;
+  cursor: pointer;
 }
 
 .div_buttons {
