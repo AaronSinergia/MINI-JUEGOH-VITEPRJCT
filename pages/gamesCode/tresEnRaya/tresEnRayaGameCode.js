@@ -1,6 +1,6 @@
 import './tresEnRayaStyles.css';
 import toggleNavs from '../../../public/navbar/toggleNavs';
-import tresRayaArray from './tresRayaArray.js/tresRayaArray';
+import tresRayaArray from './tresRayaArray/tresRayaArray';
 
 const tresEnRayaGameCode = () => {
   toggleNavs();
@@ -9,7 +9,7 @@ const tresEnRayaGameCode = () => {
   mainContent.innerHTML = '';
 
   const tableDiv = document.createElement('div');
-  tableDiv.className = 'div_game';
+  tableDiv.className = 'div_tresenraya';
 
   const tableArticle = document.createElement('article');
 
@@ -131,8 +131,8 @@ const tresEnRayaGameCode = () => {
           columnCells.every((cell) => cell.innerHTML === 'X') ||
           columnCells.every((cell) => cell.innerHTML === 'O')
         ) {
-          alert(`${columnCells[0].innerHTML} wins!`);
-          console.log(`${columnCells[0].innerHTML} wins!`);
+          alert(`${columnCells[0].innerHTML} HA GANADO!`);
+          console.log(`${columnCells[0].innerHTML} HA GANADO!`);
 
           setTimeout(() => {
             resetGame();

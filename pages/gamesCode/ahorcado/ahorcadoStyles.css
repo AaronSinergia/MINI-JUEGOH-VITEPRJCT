@@ -1,0 +1,45 @@
+.div_ahorcado {
+  display: flex;
+  justify-content: center;
+}
+
+.img_draw {
+  background-color: rgb(24, 185, 118);
+  border-radius: 30px;
+  margin-top: 70px;
+  width: 280px;
+}
+
+.hidden_word {
+  display: flex;
+  position: absolute;
+  margin-top: 350px;
+  font-size: 30px;
+  letter-spacing: 10px;
+}
+
+.word {
+  margin-left: 10px;
+}
+
+@keyframes blink {
+  0% {
+    background-color: rgba(124, 115, 115, 0.1);
+  }
+  20% {
+    background-color: rgba(124, 115, 115, 0.163);
+  }
+  0% {
+    background-color: rgba(124, 115, 115, 0.1);
+  }
+}
+
+.explanation {
+  position: absolute;
+  margin-top: 480px;
+  font-size: 12px;
+  padding: 20px;
+  color: rgb(125, 119, 119);
+  animation: blink 6s infinite;
+  border-radius: 30px;
+}

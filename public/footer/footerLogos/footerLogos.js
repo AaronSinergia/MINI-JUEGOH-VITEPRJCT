@@ -13,6 +13,10 @@ const footerLogos = () => {
   linkedinLink.href = 'https://www.linkedin.com/in/aaron-carrasco-romero/';
   netlifyLink.href = 'https://app.netlify.com/teams/aaronsinergia/overview';
 
+  githubLink.target = '_blank';
+  linkedinLink.target = '_blank';
+  netlifyLink.target = '_blank';
+
   githubLogo.alt = 'github';
   linkedinLogo.alt = 'linkedin';
   netlifyLogo.alt = 'netlify';

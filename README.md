@@ -1,20 +1,8 @@
 Requisitos | Entrega
 
-Crearemos un proyecto en vite y desarrollaremos un mínimo de 3 juegos.
-
-<Tres en raya>
-tendremos dos botones para elegir quien comienza jugando, si las "X" o los "O", en el momento de la elección desaparecerán los botones y el resto de turnos irán cambiando al contrario, si acaba de jugar "X" le tocará en el siguiente a "O".
--
-Habrá que tener en cuenta que no se pueda sustituir el valor de una casilla ya marcada.
--
-Queremos controlar cuando alguien gana haciendo comprobaciones o cuando se queda empate, en ambos casos el resultado se puede mostrar en un alert.
-
 <Ahorcado>
-Para el ahorcado tendremos un array de posibles palabras, cada palabra tendrá una longitud, y según esa longitud pintaremos los huecos.
-Además permitiremos elegir al usuario una letra, podemos hacerlo con el propio teclado, escuchando un evento en concreto.
-Cuando el usuario falle le indicaremos con una imagen o como queráis, que está más cerca de perder.
+
 Cuando falle "x" cantidad de veces perderá y le mostraremos el mensaje en un alert.
-Cuando complete la palabra habrá ganado y también se lo mostraremos.
 
 <Bingo>
 Bingo!
