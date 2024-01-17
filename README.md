@@ -1,9 +1,5 @@
 Requisitos | Entrega
 
-<Ahorcado>
-
-Cuando falle "x" cantidad de veces perderá y le mostraremos el mensaje en un alert.
-
 <Bingo>
 Bingo!
 -

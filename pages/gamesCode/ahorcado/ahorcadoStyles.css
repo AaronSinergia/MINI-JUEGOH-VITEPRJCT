@@ -42,4 +42,10 @@
   color: rgb(125, 119, 119);
   animation: blink 6s infinite;
   border-radius: 30px;
+  cursor: pointer;
+}
+
+.advertisment {
+  justify-content: center;
+  margin: 10px 0 0 0;
 }
