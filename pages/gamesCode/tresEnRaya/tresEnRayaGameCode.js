@@ -14,6 +14,7 @@ const tresEnRayaGameCode = () => {
   const tableArticle = document.createElement('article');
 
   const gridTableGame = document.createElement('table');
+  gridTableGame.className = 'tresen_table';
 
   const divButtons = document.createElement('div');
   divButtons.className = 'div_buttons';
@@ -31,6 +32,7 @@ const tresEnRayaGameCode = () => {
 
     for (let j = 0; j < tresRayaArray[i].length; j++) {
       const td = document.createElement('td');
+      td.className = 'tresen_td';
 
       tr.appendChild(td);
     }

@@ -5,14 +5,14 @@ article {
   margin: 0px 20px 0 20px;
 }
 
-table {
+.tresen_table {
   position: relative;
   width: 310px;
   height: 320px;
   margin: 20px 20px 20px 20px;
 }
 
-td {
+.tresen_td {
   width: 100px;
   height: 100px;
   background-color: rgb(241, 165, 43);
@@ -24,7 +24,7 @@ td {
   box-sizing: border-box;
 }
 
-td:hover {
+.tresen_td:hover {
   background-color: rgb(222, 183, 124);
 }
 
@@ -40,7 +40,7 @@ td:hover {
 
 .div_buttons {
   display: flex;
-  margin-top: 50px;
+  margin-top: 70px;
   margin-bottom: 40px;
   justify-content: center;
 }

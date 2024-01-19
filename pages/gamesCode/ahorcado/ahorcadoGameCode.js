@@ -73,7 +73,7 @@ const ahorcadoGameCode = () => {
       imgDraw.src = `./assets/${spanSelectedByID}.jpg`;
       setTimeout(() => {
         window.location.reload();
-      }, 1500);
+      }, 2000);
     }
   }
 
@@ -85,7 +85,7 @@ const ahorcadoGameCode = () => {
 
   const advertisment = document.createElement('h3');
   advertisment.className = 'advertisment';
-  advertisment.innerHTML = 'Si fallas más de 8 veces, MORIRÁS';
+  advertisment.innerHTML = 'Si fallas más de 8 veces, PERDERÁS';
 
   function advertismentEvent() {
     advertisment.style.display = 'flex';
