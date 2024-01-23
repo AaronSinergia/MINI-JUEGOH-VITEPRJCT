@@ -1,3 +1,4 @@
+import { randomBingoCard } from '../../../../../../functions/randomBingoCard';
 import { randomizeNumbers } from '../../../../../../functions/randomizeNumbers';
 
 let stopInterval;
@@ -16,7 +17,7 @@ const restartAndResumeButtons = (intervalSet) => {
   clearInterval(intervalSet);
 
   const resumeButton = document.createElement('button');
-  resumeButton.innerText = 'REANUDAR';
+  resumeButton.innerText = 'REANUDAR/PARAR';
   resumeButton.className = 'resume_btn';
 
   function resumedGame() {
@@ -27,7 +28,18 @@ const restartAndResumeButtons = (intervalSet) => {
       stopInterval = setInterval(function intervalRandomNumber() {
         randomNumberSelected.innerHTML = randomizeNumbers(1, 99);
         randomNumberSelected.style.fontSize = '40px';
-      }, 3000);
+
+        const randomNumber = randomNumberSelected.innerHTML;
+        const tdBingoClass = document.querySelectorAll('.td_bingo');
+
+        tdBingoClass.forEach((td) => {
+          const tdInnerHTML = td.innerHTML;
+
+          if (randomNumber == tdInnerHTML) {
+            td.classList.add('td_bingo_painted');
+          }
+        });
+      }, 2000);
     } else {
       clearInterval(stopInterval);
       randomNumberSelected.innerHTML = 'Stopped';
@@ -46,13 +58,27 @@ const restartAndResumeButtons = (intervalSet) => {
     randomNumberSelected.style.fontSize = '15px';
     clearInterval(stopInterval);
 
+    const tdBingoClass = document.querySelectorAll('.td_bingo');
+    tdBingoClass.forEach((td) => {
+      td.classList.remove('td_bingo_painted');
+    });
+
     stopInterval = setInterval(function intervalRandomNumber() {
       randomNumberSelected.innerHTML = randomizeNumbers(1, 99);
       randomNumberSelected.style.fontSize = '40px';
-    }, 3000);
+
+      const randomNumber = randomNumberSelected.innerHTML;
+
+      tdBingoClass.forEach((td) => {
+        const tdInnerHTML = td.innerHTML;
+        if (randomNumber == tdInnerHTML) {
+          td.classList.add('td_bingo_painted');
+        }
+      });
+    }, 2000);
 
     const td = document.querySelectorAll('.td_bingo');
-    td.forEach((cell) => (cell.innerHTML = randomizeNumbers(1, 99)));
+    td.forEach((cell) => (cell.innerHTML = randomBingoCard(1, 99)));
   }
   restartButton.addEventListener('click', () => restartedGame());
 

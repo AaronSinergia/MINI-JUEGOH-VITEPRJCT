@@ -15,7 +15,18 @@ const startsTheGame = () => {
   let intervalSet = setInterval(function intervalRandomNumber() {
     randomNumberSelected.innerHTML = randomizeNumbers(1, 99);
     randomNumberSelected.style.fontSize = '40px';
-  }, 3000);
+
+    const randomNumber = randomNumberSelected.innerHTML;
+    const tdBingoClass = document.querySelectorAll('.td_bingo');
+
+    tdBingoClass.forEach((td) => {
+      const tdInnerHTML = td.innerHTML;
+
+      if (randomNumber == tdInnerHTML) {
+        td.classList.add('td_bingo_painted');
+      }
+    });
+  }, 2000);
 
   const stopButton = stopTheGame(intervalSet);
 

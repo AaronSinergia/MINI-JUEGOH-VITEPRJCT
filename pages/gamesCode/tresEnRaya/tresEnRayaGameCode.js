@@ -4,6 +4,7 @@ import tresRayaArray from './tresRayaArray/tresRayaArray';
 
 const tresEnRayaGameCode = () => {
   toggleNavs();
+  let cellIsClicked = false;
 
   const mainContent = document.querySelector('.main_content');
   mainContent.innerHTML = '';
@@ -53,8 +54,10 @@ const tresEnRayaGameCode = () => {
     const printXorO = (ev) => {
       if (ev.target.innerHTML === '') {
         ev.target.innerHTML = currentPlayer;
-        ev.target.className = currentPlayer;
+        ev.target.className = 'tresen_td ' + currentPlayer;
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        cellIsClicked = true;
+        console.log(cellIsClicked);
       }
     };
 
@@ -78,7 +81,8 @@ const tresEnRayaGameCode = () => {
 
         if (printRandomTD.innerHTML === '') {
           printRandomTD.innerHTML = currentPlayer;
-          printRandomTD.className = currentPlayer + ' randomIAposition';
+          printRandomTD.className =
+            'tresen_td ' + currentPlayer + ' randomIAposition';
           currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         } else {
           const allCells = document.querySelectorAll('td');
@@ -93,10 +97,12 @@ const tresEnRayaGameCode = () => {
             const randomTdAll = emptyAllCells[randomIndexAll];
 
             randomTdAll.innerHTML = currentPlayer;
-            randomTdAll.className = currentPlayer + ' randomIAposition';
+            randomTdAll.className =
+              'tresen_td ' + currentPlayer + ' randomIAposition';
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
           }
         }
+        cellIsClicked = false;
       }, 300);
     };
 
@@ -177,10 +183,11 @@ const tresEnRayaGameCode = () => {
     };
 
     const resetGame = () => {
+      divButtons.style.display = 'flex';
+      tableArticle.style.marginTop = '0px';
       const allCells = document.querySelectorAll('td');
       allCells.forEach((cell) => {
         cell.innerHTML = '';
-        cell.className = '';
       });
     };
 
@@ -194,7 +201,9 @@ const tresEnRayaGameCode = () => {
 
         td.addEventListener('click', (ev) => {
           printXorO(ev);
-          iAPlayer(ev);
+          if (cellIsClicked) {
+            iAPlayer(ev);
+          }
           whoWins();
         });
 

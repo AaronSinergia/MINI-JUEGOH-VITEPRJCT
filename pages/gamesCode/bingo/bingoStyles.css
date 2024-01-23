@@ -21,8 +21,8 @@ section {
   box-sizing: border-box;
 }
 
-.td_bingo:hover {
-  background-color: rgb(235, 13, 13);
+.td_bingo_painted {
+  background-color: rgba(235, 13, 13, 0.687);
   border-radius: 50%;
 }
 

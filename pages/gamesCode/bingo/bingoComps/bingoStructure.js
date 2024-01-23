@@ -1,4 +1,4 @@
-import { randomizeNumbers } from '../../../../functions/randomizeNumbers';
+import { randomBingoCard } from '../../../../functions/randomBingoCard';
 import bingoArray from '../bingoArray/bingoArray';
 import randomNumberTD from './functionalities/randomNumber/randomNumberTD';
 import startGameButton from './functionalities/startGame/startGameButton';
@@ -26,7 +26,7 @@ const bingoStructure = () => {
     for (let j = 0; j < bingoArray[i].length; j++) {
       const td = document.createElement('td');
       td.className = 'td_bingo';
-      td.innerHTML = randomizeNumbers(1, 99);
+      td.innerHTML = randomBingoCard(1, 99);
 
       tr.appendChild(td);
     }
