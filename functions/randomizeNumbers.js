@@ -1,4 +1,4 @@
-let sortedArrayRandomNumbers = new Set();
+export let sortedArrayRandomNumbers = new Set();
 
 export const randomizeNumbers = (min, max) => {
   let randomNumber;

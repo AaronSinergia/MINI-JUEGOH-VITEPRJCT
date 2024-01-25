@@ -8,7 +8,7 @@ const restartAndResumeButtons = (intervalSet) => {
   const randomNumberSelected = document.querySelector(
     '.number_selected_random'
   );
-  randomNumberSelected.innerHTML = 'Stopped';
+  randomNumberSelected.innerHTML = 'Parado';
   randomNumberSelected.style.fontSize = '15px';
 
   const stopButton = document.querySelector('.stop_btn');
@@ -42,7 +42,7 @@ const restartAndResumeButtons = (intervalSet) => {
       }, 2000);
     } else {
       clearInterval(stopInterval);
-      randomNumberSelected.innerHTML = 'Stopped';
+      randomNumberSelected.innerHTML = 'Parado';
     }
 
     randomNumberSelected.style.fontSize = '10px';
@@ -54,8 +54,8 @@ const restartAndResumeButtons = (intervalSet) => {
   restartButton.className = 'restart_btn';
 
   function restartedGame() {
-    randomNumberSelected.innerHTML = 'Starting...';
-    randomNumberSelected.style.fontSize = '15px';
+    randomNumberSelected.innerHTML = 'Iniciando...';
+    randomNumberSelected.style.fontSize = '13px';
     clearInterval(stopInterval);
 
     const tdBingoClass = document.querySelectorAll('.td_bingo');

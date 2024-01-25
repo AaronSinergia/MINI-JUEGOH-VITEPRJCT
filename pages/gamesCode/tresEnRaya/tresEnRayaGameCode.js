@@ -57,7 +57,6 @@ const tresEnRayaGameCode = () => {
         ev.target.className = 'tresen_td ' + currentPlayer;
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         cellIsClicked = true;
-        console.log(cellIsClicked);
       }
     };
 
