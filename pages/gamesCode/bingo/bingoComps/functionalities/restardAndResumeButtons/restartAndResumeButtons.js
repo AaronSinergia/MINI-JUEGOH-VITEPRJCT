@@ -1,45 +1,38 @@
 import { randomBingoCard } from '../../../../../../functions/randomBingoCard';
-import { randomizeNumbers } from '../../../../../../functions/randomizeNumbers';
+import printRandomNumber from '../printRandomNumber/printRandomNumber';
+import restartButton from './restartButton/restartButton';
+
+import resumeButton from './resumeButton/resumeButton';
 
 let stopInterval;
 const restartAndResumeButtons = (intervalSet) => {
+  clearInterval(intervalSet);
   const tableDiv = document.querySelector('.div_bingo');
 
   const randomNumberSelected = document.querySelector(
     '.number_selected_random'
   );
   randomNumberSelected.innerHTML = 'Parado';
-  randomNumberSelected.style.fontSize = '15px';
+  randomNumberSelected.style.fontSize = '16px';
 
   const stopButton = document.querySelector('.stop_btn');
   stopButton.style.display = 'none';
 
-  clearInterval(intervalSet);
-
-  const resumeButton = document.createElement('button');
-  resumeButton.innerText = 'REANUDAR/PARAR';
-  resumeButton.className = 'resume_btn';
-
+  const resumeBttn = resumeButton();
   function resumedGame() {
-    const toggleOn = resumeButton.classList.toggle('active');
+    const toggleOn = resumeBttn.classList.toggle('active');
+    const randomNumberSelected = document.querySelector(
+      '.number_selected_random'
+    );
 
     if (toggleOn) {
+      randomNumberSelected.innerHTML = 'Parado';
+      randomNumberSelected.style.fontSize = '16px';
       randomNumberSelected.innerHTML = 'Reanudando...';
+
       stopInterval = setInterval(function intervalRandomNumber() {
-        randomNumberSelected.innerHTML = randomizeNumbers(1, 99);
-        randomNumberSelected.style.fontSize = '40px';
-
-        const randomNumber = randomNumberSelected.innerHTML;
-        const tdBingoClass = document.querySelectorAll('.td_bingo');
-
-        tdBingoClass.forEach((td) => {
-          const tdInnerHTML = td.innerHTML;
-
-          if (randomNumber == tdInnerHTML) {
-            td.classList.add('td_bingo_painted');
-          }
-        });
-      }, 2000);
+        printRandomNumber();
+      }, 700);
     } else {
       clearInterval(stopInterval);
       randomNumberSelected.innerHTML = 'Parado';
@@ -47,12 +40,9 @@ const restartAndResumeButtons = (intervalSet) => {
 
     randomNumberSelected.style.fontSize = '10px';
   }
-  resumeButton.addEventListener('click', () => resumedGame());
+  resumeBttn.addEventListener('click', () => resumedGame());
 
-  const restartButton = document.createElement('button');
-  restartButton.innerText = 'REINICIAR';
-  restartButton.className = 'restart_btn';
-
+  const restartBttn = restartButton();
   function restartedGame() {
     randomNumberSelected.innerHTML = 'Iniciando...';
     randomNumberSelected.style.fontSize = '13px';
@@ -64,26 +54,16 @@ const restartAndResumeButtons = (intervalSet) => {
     });
 
     stopInterval = setInterval(function intervalRandomNumber() {
-      randomNumberSelected.innerHTML = randomizeNumbers(1, 99);
-      randomNumberSelected.style.fontSize = '40px';
-
-      const randomNumber = randomNumberSelected.innerHTML;
-
-      tdBingoClass.forEach((td) => {
-        const tdInnerHTML = td.innerHTML;
-        if (randomNumber == tdInnerHTML) {
-          td.classList.add('td_bingo_painted');
-        }
-      });
-    }, 2000);
+      printRandomNumber();
+    }, 700);
 
     const td = document.querySelectorAll('.td_bingo');
     td.forEach((cell) => (cell.innerHTML = randomBingoCard(1, 99)));
   }
-  restartButton.addEventListener('click', () => restartedGame());
+  restartBttn.addEventListener('click', () => restartedGame());
 
-  tableDiv.appendChild(resumeButton);
-  tableDiv.appendChild(restartButton);
+  tableDiv.appendChild(resumeBttn);
+  tableDiv.appendChild(restartBttn);
 };
 
 export default restartAndResumeButtons;

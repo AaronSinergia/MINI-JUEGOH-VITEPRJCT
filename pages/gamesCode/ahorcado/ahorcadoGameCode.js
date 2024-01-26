@@ -6,7 +6,6 @@ let failedWord = 0;
 
 const ahorcadoGameCode = () => {
   toggleNavs();
-  let underscoreArray = [];
 
   const mainContent = document.querySelector('.main_content');
   mainContent.innerHTML = '';
@@ -60,7 +59,9 @@ const ahorcadoGameCode = () => {
         alert('Has perdido...');
         failedWord = 0;
         imgDraw.src = `./assets/0FALLOS.png`;
-        window.location.reload();
+        setTimeout(() => {
+          window.location.reload();
+        }, 200);
       }
     }
 

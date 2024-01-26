@@ -1,4 +1,4 @@
-import restartAndResumeButtons from '../RestardAndResumeButtons/restartAndResumeButtons';
+import restartAndResumeButtons from '../restardAndResumeButtons/restartAndResumeButtons';
 
 const stopTheGame = (intervalSet) => {
   const stopButton = document.createElement('button');
