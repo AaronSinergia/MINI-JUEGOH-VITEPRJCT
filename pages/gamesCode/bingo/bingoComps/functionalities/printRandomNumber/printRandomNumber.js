@@ -1,11 +1,11 @@
 import { randomizeNumbers } from '../../../../../../functions/randomizeNumbers';
+import paintedLine from '../winOrLose/paintedLine';
 
-let numbersObtainedRandomly = [];
-
-function printRandomNumber(intervalSet) {
+function printRandomNumber(intervalSet, numbersObtainedRandomly) {
   const randomNumberSelected = document.querySelector(
     '.number_selected_random'
   );
+
   const randomNumber = (randomNumberSelected.innerHTML = randomizeNumbers(
     1,
     99
@@ -27,16 +27,9 @@ function printRandomNumber(intervalSet) {
     }
   });
 
-  const tdPainted = document.querySelectorAll('.td_bingo_painted');
-
-  // cuidado al mover esta parte de código que dejan de funcionar los dos ifs
-  if (tdPainted.length === 20) {
-    console.log('has ganado');
-  }
-  if (tdPainted.length <= 19 && numbersObtainedRandomly.length == 70) {
-    alert('HAS PERDIDO');
-    window.location.reload();
-  }
+  setTimeout(() => {
+    paintedLine(numbersObtainedRandomly);
+  }, 10);
 }
 
 export default printRandomNumber;
