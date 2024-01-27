@@ -1,12 +1,12 @@
-import restartAndResumeButtons from '../restardAndResumeButtons/restartAndResumeButtons';
+import restartAndResumeGame from '../restardAndResumeButtons/restartAndResumeGame';
 
-const stopTheGame = (intervalSet) => {
+const stopTheGame = (intervalSet, numbersObtainedRandomly) => {
   const stopButton = document.createElement('button');
   stopButton.className = 'stop_btn';
   stopButton.innerText = 'PARAR';
 
   stopButton.addEventListener('click', () =>
-    restartAndResumeButtons(intervalSet)
+    restartAndResumeGame(intervalSet, numbersObtainedRandomly)
   );
 
   return stopButton;

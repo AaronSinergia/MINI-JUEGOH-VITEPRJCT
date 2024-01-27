@@ -1,0 +1,17 @@
+.div_bingo {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+section {
+  position: absolute;
+  margin: 50px 20px 0 20px;
+}
+
+.background_img {
+  position: absolute;
+  width: 350px;
+  height: 390px;
+  margin: 10px 20px 0 11px;
+}

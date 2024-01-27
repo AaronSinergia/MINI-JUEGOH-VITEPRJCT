@@ -1,0 +1,14 @@
+.number_selected_random {
+  position: relative;
+  display: none;
+  background-color: rgba(212, 177, 177, 0.171);
+  width: 70px;
+  height: 70px;
+  left: 146px;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(171, 158, 158);
+  background-color: rgba(235, 13, 13, 0.651);
+  border-radius: 50%;
+}

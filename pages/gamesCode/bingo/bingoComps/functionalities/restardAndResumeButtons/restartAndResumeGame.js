@@ -1,11 +1,10 @@
 import { randomBingoCard } from '../../../../../../functions/randomBingoCard';
 import printRandomNumber from '../printRandomNumber/printRandomNumber';
 import restartButton from './restartButton/restartButton';
-
 import resumeButton from './resumeButton/resumeButton';
 
 let stopInterval;
-const restartAndResumeButtons = (intervalSet) => {
+const restartAndResumeGame = (intervalSet, numbersObtainedRandomly) => {
   clearInterval(intervalSet);
   const tableDiv = document.querySelector('.div_bingo');
 
@@ -31,7 +30,7 @@ const restartAndResumeButtons = (intervalSet) => {
       randomNumberSelected.innerHTML = 'Reanudando...';
 
       stopInterval = setInterval(function intervalRandomNumber() {
-        printRandomNumber();
+        printRandomNumber(intervalSet, numbersObtainedRandomly);
       }, 700);
     } else {
       clearInterval(stopInterval);
@@ -43,7 +42,8 @@ const restartAndResumeButtons = (intervalSet) => {
   resumeBttn.addEventListener('click', () => resumedGame());
 
   const restartBttn = restartButton();
-  function restartedGame() {
+  function restartedGame(numbersObtainedRandomly) {
+    numbersObtainedRandomly = [];
     randomNumberSelected.innerHTML = 'Iniciando...';
     randomNumberSelected.style.fontSize = '13px';
     clearInterval(stopInterval);
@@ -54,16 +54,26 @@ const restartAndResumeButtons = (intervalSet) => {
     });
 
     stopInterval = setInterval(function intervalRandomNumber() {
-      printRandomNumber();
+      printRandomNumber(intervalSet, numbersObtainedRandomly);
     }, 700);
 
     const td = document.querySelectorAll('.td_bingo');
     td.forEach((cell) => (cell.innerHTML = randomBingoCard(1, 99)));
+
+    const lineButton = document.querySelector('.linea_button');
+    const bingoButton = document.querySelector('.bingo_button');
+
+    if (bingoButton.style.display === 'flex') {
+      bingoButton.style.display = 'none';
+      lineButton.style.display = 'flex';
+    }
   }
-  restartBttn.addEventListener('click', () => restartedGame());
+  restartBttn.addEventListener('click', () =>
+    restartedGame(numbersObtainedRandomly)
+  );
 
   tableDiv.appendChild(resumeBttn);
   tableDiv.appendChild(restartBttn);
 };
 
-export default restartAndResumeButtons;
+export default restartAndResumeGame;

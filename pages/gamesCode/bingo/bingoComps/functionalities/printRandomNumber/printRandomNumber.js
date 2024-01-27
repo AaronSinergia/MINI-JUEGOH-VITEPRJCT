@@ -1,21 +1,23 @@
 import { randomizeNumbers } from '../../../../../../functions/randomizeNumbers';
-import paintedLine from '../winOrLose/paintedLine';
+
+import './printRandomNumber.css';
 
 function printRandomNumber(intervalSet, numbersObtainedRandomly) {
   const randomNumberSelected = document.querySelector(
     '.number_selected_random'
   );
+  randomNumberSelected.style.fontSize = '38px';
 
   const randomNumber = (randomNumberSelected.innerHTML = randomizeNumbers(
     1,
     99
   ));
-  randomNumberSelected.style.fontSize = '38px';
 
   numbersObtainedRandomly.push(randomNumber);
 
-  if (numbersObtainedRandomly.length == 80) {
-    clearInterval(intervalSet);
+  if (numbersObtainedRandomly.length === 80) {
+    alert('¡Oooh, tu oponente gritó: BINGO! ANTES QUE TU! HAS PERDIDO');
+    window.location.reload();
   }
 
   const tdBingoClass = document.querySelectorAll('.td_bingo');
@@ -26,10 +28,6 @@ function printRandomNumber(intervalSet, numbersObtainedRandomly) {
       td.classList.add('td_bingo_painted');
     }
   });
-
-  setTimeout(() => {
-    paintedLine(numbersObtainedRandomly);
-  }, 10);
 }
 
 export default printRandomNumber;

@@ -1,4 +1,4 @@
-import bingoGameCode from '../../../pages/gamesCode/bingo/bingoGameCode';
+import bingoGameCode from '../../../pages/gamesCode/bingo/bingoComps/bingoGameCode';
 
 const bingoIMG = () => {
   const bingoLogo = document.createElement('img');

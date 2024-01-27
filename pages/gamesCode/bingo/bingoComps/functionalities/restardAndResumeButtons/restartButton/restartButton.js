@@ -1,3 +1,5 @@
+import './restartButton.css';
+
 const restartButton = () => {
   const restartBttn = document.createElement('button');
   restartBttn.innerText = 'REINICIAR';

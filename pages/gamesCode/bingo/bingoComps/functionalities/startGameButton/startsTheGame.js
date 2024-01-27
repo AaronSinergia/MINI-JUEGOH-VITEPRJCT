@@ -1,9 +1,7 @@
 import printRandomNumber from '../printRandomNumber/printRandomNumber';
-import stopTheGame from '../stopGame/stopTheGame';
-import paintedLine from '../winOrLose/paintedLine';
+import stopTheGame from '../stopGameButton/stopTheGame';
 
-let numbersObtainedRandomly = [];
-const startsTheGame = () => {
+const startsTheGame = (numbersObtainedRandomly) => {
   const tableDiv = document.querySelector('.div_bingo');
 
   const startClickedButton = document.querySelector('.start_btn');
@@ -14,11 +12,14 @@ const startsTheGame = () => {
   );
   randomNumberSelected.innerHTML = 'Iniciando...';
 
+  const buttonLine = document.querySelector('.linea_button');
+  buttonLine.style.display = 'flex';
+
   let intervalSet = setInterval(function intervalRandomNumber() {
     printRandomNumber(intervalSet, numbersObtainedRandomly);
   }, 700);
 
-  const stopButton = stopTheGame(intervalSet);
+  const stopButton = stopTheGame(intervalSet, numbersObtainedRandomly);
   tableDiv.appendChild(stopButton);
 };
 

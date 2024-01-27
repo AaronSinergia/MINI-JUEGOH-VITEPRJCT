@@ -1,3 +1,5 @@
+import './resumeButton.css';
+
 const resumeButton = () => {
   const resumeBtn = document.createElement('button');
   resumeBtn.innerText = 'REANUDAR/PARAR';

@@ -1,0 +1,16 @@
+.grid_bingo {
+  position: relative;
+  width: 334px;
+  height: 300px;
+  margin: 100px 20px 10px 19.5px;
+}
+
+.td_bingo {
+  color: black;
+  border: 3px solid rgb(171, 158, 158);
+  border-radius: 7px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  box-sizing: border-box;
+}
