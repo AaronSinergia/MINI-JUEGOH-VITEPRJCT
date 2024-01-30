@@ -1,7 +1,7 @@
 .number_selected_random {
   position: relative;
   display: none;
-  background-color: rgba(212, 177, 177, 0.171);
+  background-color: var(--grey-buttoncolor_bckgrnd);
   width: 70px;
   height: 70px;
   left: 146px;

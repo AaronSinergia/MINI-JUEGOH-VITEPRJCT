@@ -1,0 +1,78 @@
+.adds_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  position: absolute;
+  top: 10px;
+  left: 2%;
+  margin: auto;
+}
+
+.adds_div_two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: absolute;
+  top: 10px;
+  left: 79%;
+  right: 0;
+}
+
+.adds_div img {
+  width: 150px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.adds_div_two img {
+  width: 150px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.judas_add {
+  height: 150px;
+  animation: parpadeo 3s ease-in-out infinite;
+}
+
+.anamena_add {
+  height: 170px;
+  animation: parpadeo 3s ease-in-out infinite;
+}
+
+.mana_add {
+  height: 180px;
+  animation: parpadeo 3s ease-in-out infinite;
+}
+
+.aitana_add {
+  animation: parpadeo 5s ease-in-out infinite;
+}
+
+.metallica_add {
+  animation: parpadeo 5s ease-in-out infinite;
+}
+.raphael_add {
+  animation: parpadeo 5s ease-in-out infinite;
+}
+
+@keyframes parpadeo {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 1515px) {
+  .adds_div {
+    display: none;
+  }
+
+  .adds_div_two {
+    display: none;
+  }
+}

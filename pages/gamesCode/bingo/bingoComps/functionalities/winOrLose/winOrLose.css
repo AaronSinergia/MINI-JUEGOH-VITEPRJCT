@@ -5,7 +5,7 @@
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 10px;
-  background-color: rgb(59, 57, 57);
+  background-color: var(--grey-buttoncolor_bckgrnd);
   color: white;
 }
 
@@ -16,6 +16,5 @@
   top: 430px;
   margin-left: 20px;
   margin-right: 10px;
-  background-color: rgb(59, 57, 57);
-  color: white;
+  background-color: var(--grey-buttoncolor_bckgrnd);
 }

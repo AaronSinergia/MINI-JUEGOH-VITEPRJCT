@@ -9,6 +9,7 @@ const ahorcadoGameCode = () => {
 
   const mainContent = document.querySelector('.main_content');
   mainContent.innerHTML = '';
+  mainContent.style.display = 'flex';
 
   const gameDiv = document.createElement('div');
   gameDiv.className = 'div_ahorcado';

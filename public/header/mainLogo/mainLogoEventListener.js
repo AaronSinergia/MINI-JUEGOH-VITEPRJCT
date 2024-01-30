@@ -5,6 +5,7 @@ import tresEnRayaIMG from '../../navbar/navGamesIMG/tresEnRayaIMG';
 const mainLogoEventListener = () => {
   const mainContent = document.querySelector('.main_content');
   mainContent.innerHTML = '';
+  mainContent.style.display = 'none';
   const navbar = document.querySelector('nav');
   navbar.classList.remove('miniNav');
   navbar.innerHTML = ``;

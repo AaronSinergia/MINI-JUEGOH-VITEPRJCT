@@ -1,8 +1,14 @@
+.main_content {
+  margin-bottom: 74px;
+  justify-content: center;
+}
+
 article {
-  position: absolute;
+  display: flex;
+  position: relative;
   background-color: rgb(24, 185, 118);
   border-radius: 30px;
-  margin: 0px 20px 0 20px;
+  margin: 0px 20px 0px 20px;
 }
 
 .tresen_table {
@@ -36,20 +42,18 @@ article {
 .O {
   color: #1facd3;
   cursor: pointer;
+
+  padding: 0px 10px;
 }
 
 .div_buttons {
   display: flex;
-  margin-top: 70px;
+  font-size: 25px;
+  margin-top: 40px;
   margin-bottom: 40px;
   justify-content: center;
 }
 
-button:last-child,
-button:first-child {
-  padding: 10px 30px;
-  margin-left: 10px;
-  margin-right: 10px;
+.div_buttons > button {
   background-color: rgb(59, 57, 57);
-  color: white;
 }

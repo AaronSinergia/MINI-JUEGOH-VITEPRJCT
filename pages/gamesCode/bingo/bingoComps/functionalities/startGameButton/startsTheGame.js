@@ -7,6 +7,8 @@ const startsTheGame = (numbersObtainedRandomly) => {
   const startClickedButton = document.querySelector('.start_btn');
   startClickedButton.style.display = 'none';
 
+  const tableSection = document.querySelector('section');
+
   const randomNumberSelected = document.querySelector(
     '.number_selected_random'
   );
@@ -20,7 +22,7 @@ const startsTheGame = (numbersObtainedRandomly) => {
   }, 700);
 
   const stopButton = stopTheGame(intervalSet, numbersObtainedRandomly);
-  tableDiv.appendChild(stopButton);
+  tableDiv.insertBefore(stopButton, tableSection);
 };
 
 export default startsTheGame;

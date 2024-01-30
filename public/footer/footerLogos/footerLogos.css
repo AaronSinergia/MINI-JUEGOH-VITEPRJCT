@@ -2,29 +2,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
 }
 
 .logos_rrss_div > a,
 img {
   display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
 }
 
 .github_logo {
-  width: 95%;
+  width: 110px;
   filter: contrast(0%);
-}
-
-.netlify_logo {
-  width: 80%;
-  filter: grayscale(100%);
+  padding: 10px;
 }
 
 .linkedin_logo {
-  width: 27%;
-  margin-right: 4px;
+  width: 35px;
+  margin-right: 5px;
   filter: contrast(0%);
+  padding: 10px;
+}
+
+.netlify_logo {
+  width: 110px;
+  filter: grayscale(100%);
+  padding: 10px;
 }

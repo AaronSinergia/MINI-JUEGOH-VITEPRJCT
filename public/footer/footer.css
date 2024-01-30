@@ -1,7 +1,7 @@
 footer {
   display: flex;
-  position: fixed;
   flex-direction: column;
+  position: relative;
   justify-content: center;
   align-items: center;
   bottom: 0;

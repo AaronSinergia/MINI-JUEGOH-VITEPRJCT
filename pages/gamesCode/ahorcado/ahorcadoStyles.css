@@ -1,24 +1,29 @@
 .div_ahorcado {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .img_draw {
+  position: absolute;
   background-color: rgb(24, 185, 118);
   border-radius: 30px;
-  margin-top: 70px;
-  width: 280px;
+  width: 300px;
+  bottom: 330px;
+  justify-content: center;
+  align-items: center;
 }
 
 .hidden_word {
   display: flex;
-  position: absolute;
-  margin-top: 350px;
+  position: relative;
+  margin-top: 42px;
   font-size: 30px;
   letter-spacing: 10px;
 }
 
 .word {
+  margin-top: 343.1px;
   margin-left: 10px;
 }
 
@@ -36,7 +41,7 @@
 
 .explanation {
   position: absolute;
-  margin-top: 480px;
+  margin-top: 530px;
   font-size: 12px;
   padding: 20px;
   color: rgb(125, 119, 119);
@@ -48,4 +53,10 @@
 .advertisment {
   justify-content: center;
   margin: 10px 0 0 0;
+}
+
+@media screen and (min-width: 1230px) and (max-width: 5000px) {
+  .hidden_word {
+    margin-top: 70px;
+  }
 }

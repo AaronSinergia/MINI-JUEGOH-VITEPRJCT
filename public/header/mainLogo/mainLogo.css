@@ -1,5 +1,6 @@
 .main_logo {
   border-radius: 50%;
-  width: 15%;
+  width: 60px;
   cursor: pointer;
+  margin-right: 15px;
 }

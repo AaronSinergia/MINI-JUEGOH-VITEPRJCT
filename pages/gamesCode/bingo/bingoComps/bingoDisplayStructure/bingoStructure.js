@@ -9,6 +9,7 @@ let numbersObtainedRandomly = [];
 const bingoStructure = () => {
   const mainContent = document.querySelector('.main_content');
   mainContent.innerHTML = '';
+  mainContent.style.display = 'flex';
 
   const tableDiv = document.createElement('div');
   tableDiv.className = 'div_bingo';

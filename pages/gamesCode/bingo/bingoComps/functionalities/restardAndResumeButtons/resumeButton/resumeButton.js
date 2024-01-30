@@ -1,10 +1,10 @@
 import './resumeButton.css';
 
 const resumeButton = () => {
-  const resumeBtn = document.createElement('button');
-  resumeBtn.innerText = 'REANUDAR/PARAR';
-  resumeBtn.className = 'resume_btn';
+  const resumeBttn = document.createElement('button');
+  resumeBttn.innerText = 'REANUDAR/PARAR';
+  resumeBttn.className = 'resume_btn';
 
-  return resumeBtn;
+  return resumeBttn;
 };
 export default resumeButton;

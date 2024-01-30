@@ -1,7 +1,6 @@
 header {
   display: flex;
   grid-template-columns: 90px 1fr;
-  grid-gap: 20px;
   padding: 5%;
   justify-content: center;
   align-items: center;
@@ -10,4 +9,10 @@ header {
 h2 {
   text-align: center;
   cursor: pointer;
+}
+
+@media screen and (min-width: 1230px) and (max-width: 5000px) {
+  header {
+    padding: 30px;
+  }
 }
