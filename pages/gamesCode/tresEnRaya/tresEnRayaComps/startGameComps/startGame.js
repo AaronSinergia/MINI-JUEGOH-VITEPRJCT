@@ -91,7 +91,7 @@ const startGame = (ev) => {
 
         setTimeout(() => {
           resetGame();
-        }, 1200);
+        }, 700);
 
         return;
       }
@@ -109,7 +109,7 @@ const startGame = (ev) => {
 
         setTimeout(() => {
           resetGame();
-        }, 1200);
+        }, 700);
 
         return;
       }
@@ -127,7 +127,7 @@ const startGame = (ev) => {
 
       setTimeout(() => {
         resetGame();
-      }, 1200);
+      }, 700);
 
       return;
     }

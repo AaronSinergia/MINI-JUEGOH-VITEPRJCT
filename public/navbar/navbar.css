@@ -34,3 +34,14 @@ nav {
   border-radius: 15%;
   cursor: pointer;
 }
+
+@media screen and (min-width: 800px) {
+  nav {
+    height: 650px;
+    flex-direction: row;
+  }
+
+  .miniNav {
+    height: 60px;
+  }
+}

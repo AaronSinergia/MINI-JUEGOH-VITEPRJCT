@@ -1,4 +1,4 @@
-import { randomBingoCard } from '../../../../../../functions/randomBingoCard';
+import { randomBingoCard } from '../../../../../../functions/bingoFunctions/randomBingoCard';
 import bingoArray from '../../../bingoArray/bingoArray';
 
 import './gridTableGame.css';

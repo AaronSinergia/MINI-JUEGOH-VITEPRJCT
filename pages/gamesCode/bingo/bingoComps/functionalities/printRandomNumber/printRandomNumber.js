@@ -1,4 +1,4 @@
-import { randomizeNumbers } from '../../../../../../functions/randomizeNumbers';
+import { randomizeNumbers } from '../../../../../../functions/bingoFunctions/randomizeNumbers';
 
 import './printRandomNumber.css';
 

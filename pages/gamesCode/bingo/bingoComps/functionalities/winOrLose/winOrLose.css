@@ -1,20 +1,27 @@
 .linea_button {
   display: none;
+  font-size: 15px;
   position: absolute;
+  cursor: pointer;
   padding: 10px 20px;
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 10px;
   background-color: var(--grey-buttoncolor_bckgrnd);
   color: white;
+  border: 3px solid var(--buttoncolor_border);
 }
 
 .bingo_button {
   display: none;
+  font-size: 15px;
   position: absolute;
+  cursor: pointer;
   padding: 10px 20px;
-  top: 430px;
+  bottom: 230px;
   margin-left: 20px;
   margin-right: 10px;
   background-color: var(--grey-buttoncolor_bckgrnd);
+  color: white;
+  border: 3px solid var(--buttoncolor_border);
 }

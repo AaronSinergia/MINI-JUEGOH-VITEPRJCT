@@ -1,6 +1,10 @@
 .start_btn {
+  position: absolute;
+  cursor: pointer;
+  font-size: 15px;
   padding: 10px 30px;
-  margin: 10px 100px 20px 100px;
+  margin: 540px 100px 10px 113px;
   background-color: var(--grey-buttoncolor_bckgrnd);
   color: white;
+  border: 3px solid var(--buttoncolor_border);
 }

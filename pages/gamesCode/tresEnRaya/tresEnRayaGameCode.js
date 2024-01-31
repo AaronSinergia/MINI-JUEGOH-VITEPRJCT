@@ -1,8 +1,8 @@
 import './tresEnRayaStyles.css';
 import toggleNavs from '../../../public/navbar/toggleNavs';
 import tresRayaArray from './tresRayaArray/tresRayaArray';
-import startX from './tresEnRayaComps/startGameComps/startGameButton/startX';
-import startO from './tresEnRayaComps/startGameComps/startGameButton/startO';
+import startX from './tresEnRayaComps/startGameComps/startGameButtons/startX';
+import startO from './tresEnRayaComps/startGameComps/startGameButtons/startO';
 
 const tresEnRayaGameCode = () => {
   toggleNavs();
@@ -21,14 +21,6 @@ const tresEnRayaGameCode = () => {
 
   const divButtons = document.createElement('div');
   divButtons.className = 'div_buttons';
-
-  // const startsXButton = document.createElement('button');
-  // startsXButton.innerText = 'Play X';
-  // startsXButton.className = 'X';
-
-  // const startsOButton = document.createElement('button');
-  // startsOButton.innerText = 'Play O';
-  // startsOButton.className = 'O';
 
   for (let i = 0; i < tresRayaArray.length; i++) {
     const tr = document.createElement('tr');

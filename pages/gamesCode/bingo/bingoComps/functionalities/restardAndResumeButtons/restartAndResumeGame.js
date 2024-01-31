@@ -1,4 +1,4 @@
-import { randomBingoCard } from '../../../../../../functions/randomBingoCard';
+import { randomBingoCard } from '../../../../../../functions/bingoFunctions/randomBingoCard';
 import printRandomNumber from '../printRandomNumber/printRandomNumber';
 import restartButton from './restartButton/restartButton';
 import resumeButton from './resumeButton/resumeButton';
@@ -19,15 +19,15 @@ const restartAndResumeGame = (intervalSet, numbersObtainedRandomly) => {
 
   const resumeBttn = resumeButton();
   function resumedGame() {
+    clearInterval(stopInterval);
     const toggleOn = resumeBttn.classList.toggle('active');
     const randomNumberSelected = document.querySelector(
       '.number_selected_random'
     );
 
     if (toggleOn) {
-      randomNumberSelected.innerHTML = 'Parado';
-      randomNumberSelected.style.fontSize = '16px';
       randomNumberSelected.innerHTML = 'Reanudando...';
+      randomNumberSelected.style.fontSize = '16px';
 
       stopInterval = setInterval(function intervalRandomNumber() {
         printRandomNumber(intervalSet, numbersObtainedRandomly);
@@ -43,10 +43,10 @@ const restartAndResumeGame = (intervalSet, numbersObtainedRandomly) => {
 
   const restartBttn = restartButton();
   function restartedGame(numbersObtainedRandomly) {
+    clearInterval(stopInterval);
     numbersObtainedRandomly = [];
     randomNumberSelected.innerHTML = 'Iniciando...';
     randomNumberSelected.style.fontSize = '13px';
-    clearInterval(stopInterval);
 
     const tdBingoClass = document.querySelectorAll('.td_bingo');
     tdBingoClass.forEach((td) => {

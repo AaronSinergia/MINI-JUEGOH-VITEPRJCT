@@ -6,6 +6,7 @@
   background-color: #000000;
 
   --grey-buttoncolor_bckgrnd: rgb(59, 57, 57);
+  --buttoncolor_border: rgb(126, 115, 115);
 
   padding: 0;
   margin: 0;
