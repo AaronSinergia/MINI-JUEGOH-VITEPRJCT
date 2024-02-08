@@ -31,11 +31,11 @@ const revealAWord = (ev) => {
   const allWordsGuessed = [...words].every((word) => word.innerHTML !== '_');
 
   if (allWordsGuessed) {
-    alert('¡LA HAS ADIVINADO! ¡FELICIDADES!');
     const spanSelectedByID = document.querySelector('.hidden_word').id;
     console.log(spanSelectedByID);
     imgDraw.src = `./assets/${spanSelectedByID}.jpg`;
     setTimeout(() => {
+      alert('¡LA HAS ADIVINADO! ¡FELICIDADES!');
       window.location.reload();
     }, 600);
   }

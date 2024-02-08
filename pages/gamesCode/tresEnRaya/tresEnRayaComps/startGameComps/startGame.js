@@ -86,9 +86,10 @@ const startGame = (ev) => {
         rowCells.every((cell) => cell.innerHTML === 'X') ||
         rowCells.every((cell) => cell.innerHTML === 'O')
       ) {
-        alert(`${rowCells[0].innerHTML} HA GANADO!`);
-        console.log(`${rowCells[0].innerHTML} HA GANADO!`);
-
+        setTimeout(() => {
+          alert(`${rowCells[0].innerHTML} HA GANADO!`);
+          console.log(`${rowCells[0].innerHTML} HA GANADO!`);
+        }, 100);
         setTimeout(() => {
           resetGame();
         }, 700);
@@ -104,9 +105,10 @@ const startGame = (ev) => {
         columnCells.every((cell) => cell.innerHTML === 'X') ||
         columnCells.every((cell) => cell.innerHTML === 'O')
       ) {
-        alert(`${columnCells[0].innerHTML} HA GANADO!`);
-        console.log(`${columnCells[0].innerHTML} HA GANADO!`);
-
+        setTimeout(() => {
+          alert(`${columnCells[0].innerHTML} HA GANADO!`);
+          console.log(`${columnCells[0].innerHTML} HA GANADO!`);
+        }, 100);
         setTimeout(() => {
           resetGame();
         }, 700);
@@ -122,9 +124,10 @@ const startGame = (ev) => {
       diagonal1.every((cell) => cell.innerHTML === 'X') ||
       diagonal1.every((cell) => cell.innerHTML === 'O')
     ) {
-      alert(`${diagonal1[0].innerHTML} HA GANADO!`);
-      console.log(`${diagonal1[0].innerHTML} HA GANADO!`);
-
+      setTimeout(() => {
+        alert(`${diagonal1[0].innerHTML} HA GANADO!`);
+        console.log(`${diagonal1[0].innerHTML} HA GANADO!`);
+      }, 100);
       setTimeout(() => {
         resetGame();
       }, 700);
@@ -136,12 +139,13 @@ const startGame = (ev) => {
       diagonal2.every((cell) => cell.innerHTML === 'X') ||
       diagonal2.every((cell) => cell.innerHTML === 'O')
     ) {
-      alert(`${diagonal2[0].innerHTML} HA GANADO!`);
-      console.log(`${diagonal2[0].innerHTML} HA GANADO!`);
-
+      setTimeout(() => {
+        alert(`${diagonal2[0].innerHTML} HA GANADO!`);
+        console.log(`${diagonal2[0].innerHTML} HA GANADO!`);
+      }, 100);
       setTimeout(() => {
         resetGame();
-      }, 1200);
+      }, 700);
 
       return;
     }

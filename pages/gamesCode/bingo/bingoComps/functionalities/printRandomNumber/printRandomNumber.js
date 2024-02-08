@@ -16,7 +16,11 @@ function printRandomNumber(intervalSet, numbersObtainedRandomly) {
   numbersObtainedRandomly.push(randomNumber);
 
   if (numbersObtainedRandomly.length === 80) {
-    alert('¡Oooh, tu oponente gritó: BINGO! ANTES QUE TU! HAS PERDIDO');
+    const enemyDisplayWin = numbersObtainedRandomly.slice(0, 40);
+    alert(
+      'El oponente ha llegado antes a Bingo, sus numeros son: ' +
+        enemyDisplayWin
+    );
     window.location.reload();
   }
 
